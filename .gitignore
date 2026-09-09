@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.vscode/
+
+# Large ML artifacts
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+models/*/
+huggingface/
+.cache/
+.cache/
+*.wav
+*.mp3
+*.flac
+
+# Local datasets
+data/raw/*
+data/processed/*
+!data/README.md
+
+# Logs / temporary
+logs/
+tmp/

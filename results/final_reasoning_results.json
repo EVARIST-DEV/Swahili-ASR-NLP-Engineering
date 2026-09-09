@@ -1,0 +1,35 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "method": "QLoRA",
+  "training_variant": "assistant-only loss",
+  "dataset": "controlled synthetic Swahili reasoning benchmark",
+  "test_samples": 100,
+  "baseline": {
+    "exact_match": 0.0,
+    "correct": 0,
+    "incorrect": 100
+  },
+  "qlora_v1": {
+    "exact_match": 0.0,
+    "correct": 0,
+    "incorrect": 100,
+    "training_loss": 0.7365546941757202
+  },
+  "qlora_v2": {
+    "exact_match": 0.97,
+    "correct": 97,
+    "incorrect": 3,
+    "training_loss": 0.37898348286747935,
+    "training_steps": 100,
+    "epochs": 2,
+    "training_runtime_seconds": 283.4566,
+    "inference_runtime_seconds": 56.4
+  },
+  "error_analysis": {
+    "total_errors": 3,
+    "arithmetic_errors": 3,
+    "logical_ordering_errors": 0,
+    "rule_based_classification_errors": 0,
+    "arithmetic_error_rate": 0.03
+  }
+}

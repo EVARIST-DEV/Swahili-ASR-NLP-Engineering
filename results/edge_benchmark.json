@@ -1,0 +1,30 @@
+{
+  "hardware": {
+    "platform": "Google Colab",
+    "gpu": "Tesla T4",
+    "vram_gb": 14.56
+  },
+  "asr": {
+    "model": "openai/whisper-small",
+    "parameters": 241734912,
+    "serving_dtype": "float16",
+    "weight_memory_gb_approx": 0.45,
+    "benchmark_samples": 10,
+    "average_latency_seconds": 1.113,
+    "minimum_latency_seconds": 0.810,
+    "maximum_latency_seconds": 1.585,
+    "peak_gpu_memory_gb": 3.14,
+    "measurement_status": "measured"
+  },
+  "reasoning": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "optimization": "QLoRA 4-bit NF4 with double quantization and float16 compute",
+    "adapter_checkpoint": "models/qwen2.5-1.5b-qlora-v2/checkpoint-100",
+    "measurement_status": "quantization used for training/inference; no separate post-quantization latency/memory measurement recorded"
+  },
+  "deployment_decision": {
+    "asr": "Keep FP16 for the assessed T4 baseline because measured peak memory is only 3.14 GB and no accuracy-preserving quantized ASR result was established.",
+    "reasoning": "Use 4-bit NF4 QLoRA to minimize base-model memory and ship the small adapter separately.",
+    "edge_next_step": "Benchmark the exact target edge device before selecting INT8/INT4 ASR quantization or TensorRT/ONNX conversion."
+  }
+}

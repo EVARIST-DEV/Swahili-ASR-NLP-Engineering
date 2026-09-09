@@ -1,0 +1,13 @@
+torch>=2.1
+transformers==5.16.1
+datasets==4.0.0
+evaluate==0.4.6
+jiwer==4.0.0
+accelerate==1.14.0
+peft==0.20.0
+bitsandbytes==0.50.2
+librosa==0.11.0
+soundfile==0.14.0
+sentencepiece
+numpy
+pyarrow==20.0.0

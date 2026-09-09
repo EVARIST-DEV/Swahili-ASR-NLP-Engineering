@@ -1,0 +1,21 @@
+{
+  "pipeline": "Swahili ASR + NLP reasoning",
+  "architecture": "modular multimodal pipeline",
+  "asr_model": "openai/whisper-small",
+  "asr_finetuned_checkpoint": "checkpoint-125",
+  "reasoning_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "reasoning_method": "QLoRA",
+  "reasoning_checkpoint": "checkpoint-100",
+  "dataset_asr": "google/fleurs sw_ke",
+  "asr_test_samples": 487,
+  "reasoning_test_samples": 100,
+  "asr_wer": 0.4298,
+  "asr_cer": 0.1224,
+  "asr_wer_improvement_percent": 70.97,
+  "asr_cer_improvement_percent": 83.97,
+  "reasoning_exact_match": 0.97,
+  "reasoning_correct": 97,
+  "demo_audio": "data/processed/end_to_end_demo/fleurs_sw_demo_1999.wav",
+  "gpu_required_for_original_inference": true,
+  "full_dataset_rerun_required": false
+}

@@ -1,0 +1,32 @@
+{
+  "model": "openai/whisper-small",
+  "dataset": "google/fleurs",
+  "language_config": "sw_ke",
+  "test_samples": 487,
+  "baseline": {
+    "wer": 1.4804,
+    "cer": 0.7637
+  },
+  "fine_tuned": {
+    "wer": 0.4298,
+    "cer": 0.1224
+  },
+  "improvement_percent": {
+    "wer": 70.97,
+    "cer": 83.97
+  },
+  "error_analysis": {
+    "reference_words": 9998,
+    "correct_words": 6446,
+    "substitutions": 3176,
+    "deletions": 376,
+    "insertions": 745,
+    "substitution_rate": 0.3177,
+    "deletion_rate": 0.0376,
+    "insertion_rate": 0.0745
+  },
+  "inference": {
+    "test_samples": 487,
+    "time_minutes": 10.33
+  }
+}

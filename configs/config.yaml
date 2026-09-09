@@ -1,0 +1,30 @@
+project_name: Swahili-ASR-NLP-Engineering
+seed: 42
+sampling_rate: 16000
+audio_channels: 1
+
+asr:
+  base_model: openai/whisper-small
+  train_samples: 1000
+  validation_samples: 100
+  epochs: 1
+  learning_rate: 0.00001
+  train_batch_size: 2
+  gradient_accumulation_steps: 4
+  fp16: true
+
+reasoning:
+  base_model: Qwen/Qwen2.5-1.5B-Instruct
+  method: QLoRA
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  epochs: 2
+  learning_rate: 0.0002
+  train_batch_size: 2
+  gradient_accumulation_steps: 4
+  assistant_only_loss: true
+
+evaluation:
+  asr_test_samples: 487
+  reasoning_test_samples: 100
